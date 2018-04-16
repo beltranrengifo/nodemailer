@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+{{#if info}}
+    <p>A confirmation message has been sent to:</p>
+    <ul>
+        {{#each info.accepted}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+{{#if activeMessage}}
+    <p>Usuario activado</p>
+{{/if}}
+{{#if user}}
+    <p>Hi {{user.username}}</p>
+    <p>Your status is {{user.status}}</p>
+    <div><a href="/profile">My profile</a></div>
+    <div><a href="/auth/logout">Logout</a></div>
+{{else}}
+    <div><a href="/auth/login">Login</a></div>
+    <div><a href="/auth/signup">Signup</a></div>
+{{/if}}
